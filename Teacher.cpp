@@ -37,8 +37,6 @@ public:
             std::string solution = Solver::Solve(t.A, t.B, t.C);
             for(auto& s: journal){
                 std::string studsolution = s.Solve(t.A, t.B, t.C);
-                //std::cout<<"teacher "<<solution<<std::endl;
-                //std::cout<<"student "<<studsolution<<std::endl;
                 if(solution == studsolution){
                     s.PlusCorrectSolves();
                 }
