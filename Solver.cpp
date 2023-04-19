@@ -12,7 +12,7 @@ public:
         }
         else{
             chance = float((time(NULL) + rand()) % 100) / 100;
-            //std::cout<<chance<<std::endl;
+            
         }
     }
 
@@ -109,9 +109,7 @@ private:
 
     bool CheckChance(){
         float chance_now = float((time(NULL) + rand()) % 100) / 100;
-        //std::cout<<"chance now "<< chance_now << std::endl;
-        if (chance_now <= chance) {
-            //std::cout << "test ok\n";
+        if (chance_now <= chance) {            
             return true;
         }
         else{
