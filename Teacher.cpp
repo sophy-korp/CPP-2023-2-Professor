@@ -3,7 +3,7 @@
 #include <fstream>
 
 struct test{
-    float A, B, C;
+    double A, B, C;
 };
 
 class Teacher : public Solver{
@@ -25,7 +25,7 @@ public:
             std::cout << "input file error" << std::endl;
             return;
         }
-        float A, B, C;
+        double A, B, C;
         while (input_file >> A && input_file >> B && input_file >> C){
             tests.push_back({A, B, C});
         }
@@ -37,6 +37,8 @@ public:
             std::string solution = Solver::Solve(t.A, t.B, t.C);
             for(auto& s: journal){
                 std::string studsolution = s.Solve(t.A, t.B, t.C);
+                //std::cout<<"teacher "<<solution<<std::endl;
+                //std::cout<<"student "<<studsolution<<std::endl;
                 if(solution == studsolution){
                     s.PlusCorrectSolves();
                 }
